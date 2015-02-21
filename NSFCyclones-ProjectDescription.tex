@@ -146,6 +146,10 @@ Extratropical cyclones are dominant features of the mid-latitude atmosphere asso
 
 The Community Earth-System Model (CESM) \cite{RBNetal2010NCAR} is a state-of-the-art Earth modeling framework developed at NCAR, consisting of atmospheric, oceanic, land and sea ice components.  This framework has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change.  The atmopsheric component, CAM, is further broken into two components: the dynamical core, which solves the 3D primitive equations of motion for the atmosphere, and the physics parameterization suite, which incorporates processes that occur on scales finer than the model grid scale. This project will utilize simulations from two different commonly used dynamics packages. The first package, the finite-volume (FV) dynamical core based on a regular latitude--longitude grid, is built upon a 2D shallow water approach described in \citet{Lin1996,Lin1997} and is mass-conservative in flux-form. The push for high-resolution climate simulations has required that CAM be sufficiently robust to operate on horizontal scales as fine as 10 km globally, although previous generations of the dynamical cores on latitude-longitude grid have been too slow at high resolutions to operate well at these scales.  With the development of the CAM spectral element (SE) dynamical core \citep{dennis2012cam}, utilizes a continuous Galerkin method with polynomials of degree 3 to provide a fourth-order accurate horizontal discretization on a highly scalable cubed-sphere mesh.  Current experiments are only now leading to the availability of simulations on climate time-scales at 25km global resolution \citep{Bacmeister2014, Wehner2014, Wehner2015}.
 
+\subsubsection{Justification for using CESM 28km to model Atlantic basin tropical cyclones}
+
+{\color{red}[Kevin write this]}
+
 \subsubsection{High-throughput event detection with TempestExtremes} \label{sec:TempestExtremes}
 
 TempestExtremes software package, a new suite of flexible detection and characterization algorithms developed by the Co-PI for processing large climate datasets. This package uses an algorithmic framework known as ``MapReduce'' to first detect candidate events at individual times using specified criteria. Stitching is then used to track pointwise and areal detections in time. The result is a catalog of extreme weather events and associated characteristics (here treated as climate indicators) whose generation can be automated and parallelized for multiple datasets.
@@ -189,8 +193,8 @@ RCP8.5, CAM5-SE & 25 km & 30 years    & Time-slice 2070-2099 \\
 \hline
 Configuration & Resolution & Length & Note \\ 
 \hline
-AMIP, CAM5-SE & 100$\Rightarrow$25 km & 15 years    & 5 ensembles for 1990-2005 \\
-RCP8.5, CAM5-SE & 100$\Rightarrow$25 km & 15 years    & 5 ensembles for 2080-2085 \\
+AMIP, CAM5-SE & 100$\Rightarrow$25 km & 15 years    & 5 ensembles for 1980-2005 \\
+RCP8.5, CAM5-SE & 100$\Rightarrow$25 km & 15 years    & 5 ensembles for 2070-2095 \\
 \hline
 \end{tabular}
 \end{center}
@@ -204,19 +208,19 @@ Reanalysis products represent climate model hindcasts which are tightly constrai
 
 The research milestone will be approached in a step-by-step manner as described in the following sections. A set of relevant scientific questions are also provided that will be addressed by the proposed research.
 
-\subsubsection{Task 1a: Develop Robust Cyclone Detection and Characterization Framework}
+Tasks 2 through 6 will incorporate both aspects of validation with present-day climatology and future climatology.
+
+\subsubsection{Task 1: Validate our Tropical Cyclone Detection and Characterization Framework}
 
 The first main objective of the proposed research will be to develop a robust tracker for high-resolution climate model output. The tracker would allow for seamless tracking of the entire lifecycle of cyclones in the North Atlantic. This will including tracking of a tropical cyclone through extratropical transition, as well as tracing the origins of the tropical cyclone, particularly those that develop from AEWs. 
 
 {\color{red} Why not use an existing tracker?  What modifications would you propose from the existing version of TempestExtremes?}
 
-\subsubsection{Task 1b: Testing Detection Framework in Present-Day Climate}
-
 Following the development cyclone framework, the algorithm will be applied to the series of the present-day AMIP CAM-FV simulation. This model dataset is choose for the validation process as it has already been well study in its ability to simulate TCs \citep{Bacmeister2014,Wehner2014} and is readily available to community. While particular interest for this proposal is to investigate the lifecycle of cyclones in the North Atlantic, the framework will be applied to the entire global dataset to ensure the vailidity of the framework in all ocean basins for future research. 
 
 For the validation of tropical cyclones, observations from the International Best Track Archive for Climate Stewardship (IBTrACS, \citet{Knapp2010}) for the same time period (1980-2005) will be used. The comparsion will help understand biases in tropical cyclone global distribution, genesis location and intensity worldwide. \emph{Are we using reanalysis for AEWs and ETCs?}
 
-\subsubsection{Task 2: Intercomparison of Methods for Detection of African Easterly Waves} 
+\subsubsection{Task 2: African Easterly Waves and Cyclogenesis} 
 
 Hodges (1995) identifies a technique for tracking African Easterly waves.
 
@@ -232,30 +236,35 @@ Skinner and Diffenbaugh (2012) AGU abstract: ``Given favorable conditions for cy
 
 %Indeed, nearly all models simulate an increase in the occurrence of intense and extremely intense AEWs along the Sahel?Sahara border (Fig. 5). This includes median changes of +2.0 events per season (and +39\%) for intense AEWs, and +0.8 events per season (and +72\%) for extremely intense AEWs.
 
-\subsubsection{Task 3: Study Variability in Present-Day Ensemble Simulations}
-
-Due to extreme computational costs, studies of TCs at high-resolution in climate models are typically limited to one realiztion (i.e. on esemble member). Recently however, ensemble simulation have been run in the CAM5-FV AMIP configuration for the period of 1994 to 2005 in collaboration with Michael Wehner at LBNL. The ensemble simualtions offer a unique oppurtunity to study the natural varibility of the cyclone climatology in the recent climate. In addition, the present-day climatology CAM5-FV CLIVAR simulation offers a different form of variability, as it represents the internal variability of a one year climatology runs 14-17 times. Furthermore, additional simulations using the variable-resolution cabilities of CAM5-SE will be performed to compliment the global high-resultion CAM5-SE AMIP simulations. The advantage of the variable resolution runs is that numerous ensemble runs can be performed at the same cost as the one globally uniform high-resolutiuon simulation.
-
-\emph{How well does CAM5 perform at interannual variability?}
-
-
-\subsubsection{Task 4: Investigate Climate Change Impact on Cyclone Lifecycle in the North Atlantic}
-
-Understanding how the characteristics of tropical cyclones in the North Atlantic will change in the coming century is critical to coastal communities and the U.S. as a whole. This objective will make use of the CAM5-FV CLIVAR simulations, as well as the CAM5-SE future time-slice simulations. In addition, supplementary CAM5-SE variable resolution future simulations will be performed for this project. These additional simulations will mimic the setup proposed for present-day climate in the previous task. 
-
 \emph{Why does the count of North Atlantic tropical cyclones decrease in future scenarios?}
 
 Preliminary work has shown a noticeable decrease in the formation of tropical cyclones in the North Atlantic in the CAM5-SE simulations. Figure \ref{fig-rcp}, shows the track density of TCs for present-day and future simualtions using the TC detection algorithm and tracker utilized for this analysis is that used and described in \citet{Zhao2009}. The figure indicates a decrease in TCs basin-wide with the largest decrease in the eastern part of the bain off the coast of Africa. The track densities are calculated similar to \citet{Done2013} and is defined as the number of TC genesis points or tracks within a 5 degree radius of a given point per year. This pattern suggests that there is some connection between the future distribution and African easterly Waves.
 
 Using the seamless dectection algorithm described in Task 1, this relationship between AEWs and TCs will be explored both in the idealized CLIVAR experiments and CAM5-SE simulations using the ensemble variable resolution simulations. In particular, the location and intensity of AEWs will be investigated, as well as the efficiency of the tropical waves to develop into TCs. Furthermore, a comprehensive investigation of other environmental factors, including shear, will be studied.
 
+\subsubsection{Task 3: Tropical Cyclone Tracks, Intensity and other Characteristics}
+
+Due to extreme computational costs, studies of TCs at high-resolution in climate models are typically limited to one realiztion (i.e. on esemble member). Recently however, ensemble simulation have been run in the CAM5-FV AMIP configuration for the period of 1994 to 2005 in collaboration with Michael Wehner at LBNL. The ensemble simualtions offer a unique oppurtunity to study the natural varibility of the cyclone climatology in the recent climate. In addition, the present-day climatology CAM5-FV CLIVAR simulation offers a different form of variability, as it represents the internal variability of a one year climatology runs 14-17 times. Furthermore, additional simulations using the variable-resolution cabilities of CAM5-SE will be performed to compliment the global high-resultion CAM5-SE AMIP simulations. The advantage of the variable resolution runs is that numerous ensemble runs can be performed at the same cost as the one globally uniform high-resolutiuon simulation.
+
+\emph{How well does CAM5 perform at interannual variability?}
+
+Understanding how the characteristics of tropical cyclones in the North Atlantic will change in the coming century is critical to coastal communities and the U.S. as a whole. This objective will make use of the CAM5-FV CLIVAR simulations, as well as the CAM5-SE future time-slice simulations. In addition, supplementary CAM5-SE variable resolution future simulations will be performed for this project. These additional simulations will mimic the setup proposed for present-day climate in the previous task. 
+
 \emph{Is there a change in landfalling TCs?}
+
+\subsubsection{Task 5: Characterization of Landfalling Tropical Cyclones}
+
+{\color{red}[Kevin write this]}
+
+\subsubsection{Task 6: Characterization of the Extratropical Transition}
+
+The extratropical transition of tropical cyclones is an important meteorological phenomenon whereby warm-core tropical cyclones transition into cold-core ETCs when they are sufficiently far from the tropics.  The extratropical transition has been studied in detail in the meteorological literature, and is fairly well understood \citep{hart2001climatology}.  However, the extratropical transition has not been thoroughly studied in the context of climate change.  In particular, studies on the effects of future climate have largely suggested that tropical cyclones will generally be fewer in number but will generally be more intense \citep{li2013hurricanes}, whereas many past studies of ETCs have agreed that although ETCs will be fewer in number, only precipitation intensity is expected to increase \citep{bengtsson2009will}.  Consequently, it is worthwhile to examine the influence of the changing climate on ETCs which occur due to extratropical transition of tropical cyclones using the infrastructure developed as part of this proposal.
+
+{\color{red}[Kevin write this]}
 
 \emph{Is there a shift in extratopical cyclone tracks in future climate?}
 
 In order to get a full picture of the changes in cyclones, the impact of increase radiative forcing on ETCs is also proposed. This task will focus on shifts in ETCs regions of formation, including those that develop from TCs, as well as overall changes in track distribution and intensity. \emph{Should we types of transition... I'm thinking of Superstorm Sandy?}
-
-\subsubsection{Task 5:}
 
 \subsection{Online access to climate data and results}
 
