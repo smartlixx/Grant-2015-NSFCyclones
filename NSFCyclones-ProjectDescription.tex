@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{natbib}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{comment}
+
+\usepackage[compact]{titlesec}  
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+
+\oddsidemargin 0cm
+\evensidemargin 0cm
+
+\usepackage[margin=1in]{geometry}
+
+\parindent 0cm
+\parskip 0.5cm
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[L]{AOSS Reference Sheet}
+\fancyhead[C]{\small Cyclones!}
+\fancyfoot[C]{Page \thepage}
+
+\newcommand{\vb}{\mathbf}
+\newcommand{\diff}[2]{\frac{d #1}{d #2}}
+\newcommand{\diffsq}[2]{\frac{d^2 #1}{{d #2}^2}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdiffsq}[2]{\frac{\partial^2 #1}{{\partial #2}^2}}
+\newcommand{\topic}{\textbf}
+\newcommand{\arcsinh}{\mathrm{arcsinh}}
+\newcommand{\arccosh}{\mathrm{arccosh}}
+\newcommand{\arctanh}{\mathrm{arctanh}}
+
+\begin{document}
+
+\appendix
+
+\addtocounter{section}{3}
+
+\section*{Notes}
+
+- African Easterly Waves
+- Why does the number of cyclones decrease in the future?  Is this robust across models (but high resolution is needed)?  Humidity at 600hPa; shearing differences?  SST distribution?
+- Focus on the northern Atlantic and eastern Pacific
+- Why does intensity increase?
+- Are coupled model simulations needed to assess tropical cyclones?  Coupled model biases are very problematic
+- Extratropical cyclones and the tropical transition.  Is the tropical transition pushed farther North?  Detection algorithm based approach to ETCs.
+- An outcome is a more robust detection / stitching algorithms
+- Changes in landfall?  Assessment of regions which will be more susceptible to TC damage.  How does recurving affect this?
+- "Changes in global circulation and the effect on local extremes"
+- Leverage the ensemble of high resolution ensemble data
+- Variable resolution over the Atlantic basin; run a bunch of ensembles at 25km resolution
+- What are the resolution dependencies of ETCs?
+- Characterizing changing t-storms (size, wind speed, pressure, symmetry, latitude of max intensity, precipitation, latitude of maximum intensity, precipitation over land)
+- Characterizing changing et-storms (size, wind speed, pressure, snow/rain precip. amounts, latitude of max. intensity)
+ 
+\section{Project Description}
+
+The next century will see unprecedented changes to the climate system.  These changes are particularly apparent to the general population in the behavior of extreme weather events. As stated in the third national climate assessment, ``changes in extreme weather and climate events, such as heat waves and droughts, are the primary way that most people experience climate change.''  These changes have been observed since at least 1950, and have been at least partially linked to climate change due to human influences (IPCC AR5 Synthesis Report).  As such, the characteristics of climate extremes are key indictors of climate change, and addressing observed and projected changes in these quantities will be important for future climate assessments.
+
+The central hypotheses of this proposal are as follows:
+
+\vspace{-0.4cm}
+\begin{itemize}
+\item[(H1)] A reduction in African Easterly Wave activity is a driver for reduced tropical cyclone count in the Atlantic basin
+
+\item[(H2)] The transition point for tropical cyclones to extratropical cyclones will be pushed north in response to increased carbon dioxide and/or increased sea surface temperatures.
+
+\item[(H3)] Point of landfall for tropical storms in both the Atlantic and Pacific basins will be pushed northward under future climate scenarios.  Overland precipitation will increase.
+\end{itemize}
+
+
+The \textbf{uniting themes} of this proposal are \textbf{tropical cyclones}, \textbf{extratropical cyclones}, \textbf{climate change} and \textbf{big data}: This work will drive the introduction of a high-throughput cross-validated toolset for detecting and characterizing these atmospheric pheonmena in large climate datasets.  Part of the uniqueness of this proposal is that it tackles scientific questions arising from tropical cyclones and extratropical cyclones within a unified framework by considering robust event detection methods as applied in the global context.  It further considers questions of attribution and prediction by leveraging these data analysis tools and large ensemble datasets to drive the most scientifically robust conclusions.
+
+In addition to driving the development of new tools and methods, this proposal aims for several unique and novel results.  \textbf{High-resolution model simulations} will be a major focus of this work:  Under this study, it is hypothesized that high model resolution (28km and 14km) will greatly improve the resolution of both TCs and ETCs, and will produce convergence in modeled count and intensity.  Further, it is anticipated that these features will be more realistic in the vicinity of rapidly changing topography, such as along the North American coast.  This proposal also aims to be the first to completely characterize TCs and ETCs in the \textbf{Community Earth System Model (CESM)}, verify that CESM produces a climatology consistent with observational data, and understand how model resolution plays a role in resolving these features.  Also the use of alternate convection schemes to model TCs and ETCs will be explored.  Finally, in addition to their mean behavior, this proposal is also interested in studying the \textbf{variability} of these features by producing and leveraging access to large ensembles of model results.
+
+The overarching objectives of the research component of this proposal are as follows:
+
+\begin{enumerate}
+\item Develop robust methods and tools for detection and classification of tropical cyclones and extratropical cyclones, and provide improved tools for analysis of large climate datasets.
+
+\item Understand the influence of human-induced climate change on the characteristics of tropical cyclones and extratropical cyclones (detection and attribution) at present and in the recent past.
+
+\item Provide a scientifically and statistically robust risk assessment in the next century for tropical cyclones and extratropical cyclones.
+\end{enumerate}
+
+The remainder of this proposal is structured as follows: Motivation is presented in section \ref{sec:Motivation}, background and ongoing work are presented in section \ref{sec:BackgroundOngoingWork}, research milestone are presented in \ref{sec:ResearchMilestones}, the integrated research and educational plan is presented in section \ref{sec:IntegratedResearchEducation} and the timeline for the proposed work is presented in section \ref{sec:Timeline}.
+
+\subsection{Motivation} \label{sec:Motivation}
+
+\subsubsection{Broader Impacts and Intellectual Merits}
+
+\paragraph{Broader Impacts:}  
+
+\paragraph{Intellectual Merits:}  
+
+\subsection{Strengths of the team}
+
+PI Ullrich has previously been the driver in the development of statistical techniques for analyzing bioinformatics data, and was involved in the design of a large data workflow as part of his work at RapidLabs Microsystems \citep{mikkelsen2005patent}.  His work at Maplesoft also involved the study and implementation of statistical methods for symbolic computation.  He is heavily involved in atmospheric modeling, having developed a global shallow-water model \citep{PAUCJBVL2010JCP}, a regional atmospheric modeling system \citep{PAUCJ2012MWR} and a fully 3D non-hydrostatic dynamical core \citep{PAUCJ2012JCP}.  He has further worked on adaptive mesh refinement and quasi-uniform grid geometries in extensive detail \citep{HJPCPMPAU2013MWR}, and been a lead designer in the development of new test cases for atmospheric dynamical cores \citep{PAUTMCJAS2013QJRMS,kent2013dcmip}.  He is heavily involved in national collaborations on climate projects, and is an organizer on a number of sessions and workshops which are related to atmospheric modeling.  In addition, he is closely affiliated with ongoing climate research efforts at LBNL and NCAR.  Two of his graduate students (Marielle Pinheiro and Josephine Fong) have already begun efforts to tackle the question of extreme weather detection and attribution.  They have been co-supervised by Dr. Michael Wehner as part of the climate research team at LBNL.
+
+\paragraph{Future goals:}  This work will also assist the PI in the development of his career.  In the near-term this project will drive the PI to the establish an interdisciplinary research group drawn from Earth sciences, applied mathematics and computer science that will be at the forefront of research on regional climate change in the coming century.  This project also has the potential to open up additional possibilities for research, such as in the development of improved model dynamics and new methods for model intercomparison.  With this work, the PI aims to promote a greater public understanding of the effect of a changing global climate on regional climate and extreme weather, as well as inform the public and scientific community on technologies for interdisciplinary research in global Earth-system modeling.  Eventually, the PI aims to be a leader within the climate community and drive the study of regional scale climate change within Intergovernmental Panel on Climate Change (IPCC) assessments.
+
+Prof. Kevin Reed brings considerable experience in high-resolution climate modeling.  His past research has focused on understanding the ability of the Community Atmosphere Model (CAM) to simulate tropical cyclones at present-day and next-generation horizontal resolution \citep{Reed2011a,Reed2011c}.  This includes the study of how tropical cyclones and precipitation extremes change with climate change using decadal climate simulations at approximately 25-km horiztonal resoluton \citep{Wehner2014}. Prof Reed also has developed techniques to utilize reduced complexity testbeds for understanding cloud, circulation and precipitation sensitivities in Atmospheric General Circulation Models (AGCMs) \citep{Reed2012a,Reed2014}. These simplified techniques have shown to be useful to rationalize robust behaviors of the Earth system and vital to continued model development and intercomparison. Through his work, Prof. Reed has developed international collaborations in model development and high-resolution modeling.
+
+\subsection{Background and Ongoing Work} \label{sec:BackgroundOngoingWork}
+
+The focus of this proposal is on tropical and extratropical cyclones, which will be studied in the context of climate change and big data.  This proposal will bring together a number of existing technologies, datasets and studies in order to address its objectives.  These features, technologies and datasets are described below.
+
+\subsubsection{Tropical Cyclones}
+Tropical cyclones (TCs) are extreme vortices that develop over the warm tropical oceans, and are among the most destructive geophysical phenomena. In the United States, tropical cyclones are the costliest of all natural disasters \citep{Pielke1998}. As a result, understanding how global and regional TC climatology will change in the coming decades is of significant value to society. The general understanding is that global tropical cyclone frequency is likely to decrease, or remain relatively unchanged, with a likely increase in intensity under future climate scenarios (IPCC AR5 Synthesis Report). However, there is no consenus for the manner in which TC frequency and intensity will change regionally in a future climate using CMIP5 models \citep{Camargo2013}. The proposed research will study the attribution of anthropogenic climate change on TC intensity intensity, frequency and storm precipication. Furthermore, the proposed work will address the questions of how climate change may impact TC climatology in individual ocean basins by making use of ensemble simlations.  
+
+%Climate models are becoming a preferred tool to assess TCs in current and future climate conditions. Despite typical resolution limitations, it is well known that general circulation models (GCMs) have the ability to simulate TCs, even at coarse horizontal resolutions of 100 km \citep{Knutson2010}. However, these simulated TCs are typically of weaker intensity and larger size than observed storms \citep{Walsh2007}. Using horizontal resolutions in the range of 10-30 km, more recent GCM studies have shown the ability to improve some of these resolution limitations \citep{Murakami2012,Manganello2012, Bacmeister2014, Wehner2014}.
+
+
+\subsubsection{Extratropical Cyclones}
+
+Extratropical cyclones are dominant features of the mid-latitude atmosphere associated with synoptic scale low pressure systems outside the tropics \citep{serreze1995climatological}.  Similar to tropical cyclones, these systems are responsible for high winds and extreme precipitation, and consequently have the potential for large socioeconomic impact \citep{ulbrich2009extra}.  Studies of extratropical cyclones under future climate scenarios suggest that the expansion of the Hadley circulation will drive extratropical cyclones poleward \citep{bengtsson2006storm} and the warmer climate will lead to an intensification of precipitation of these storms \citep{bengtsson2009will, zappa2013multi}.  This proposal aims to address the question of attribution of changes in ETCs to anthropogenic forcing, a question which has not yet been tackled in the literature.  It will also address the issue of whether observed intensification over the southern hemisphere in reanalysis data is corroborated with model results, or is likely associated with an increase in the number of observing stations \citep{simmonds2000variability}.  Further, results from MERRA and C20C datasets (which have traditionally been neglected in favor of NCEP and ERA-40 data) will be integrated into the analysis.
+
+\subsubsection{Global climate modeling with CESM}
+
+The Community Earth-System Model (CESM) \cite{RBNetal2010NCAR} is a state-of-the-art Earth modeling framework developed at NCAR, consisting of atmospheric, oceanic, land and sea ice components.  This framework has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change.  CAM is further broken into two components: the dynamical core, which solves the 3D primitive equations of motion for the atmosphere, and the physics parameterization suite, which incorporates processes that occur on scales finer than the model grid scale.  The push for high-resolution climate simulations has required that CESM be sufficiently robust to operate on horizontal scales as fine as 10 km globally, although previous generations of the dynamical core have been too slow at high resolutions to operate well at these scales.  Only recently, with the development of the CAM spectral element dynamical core \citep{dennis2012cam}, has the capability for high-resolution simulations become available.  Current experiments are only now leading to the availability of simulations on climate time-scales at 25km global resolution \citep{Bacmeister2014, Wehner2014}.
+
+\subsubsection{High-throughput event detection with TECA} \label{sec:TECA}
+
+The Toolkit for Extreme Climate Analysis (TECA) \citep{PORSBKWFLMWWB2012PCS} that has been developed at LBNL is a cutting-edge data processing tool capable of high throughput data processing using a two stage identification procedure:  First, following a criteria with no temporal dependence, cells are tagged as ``candidates for investigation'' and stored for later use.  Second, using the reduced dataset of candidate elements, a temporal criteria is applied which allows candidate elements to be connected in time (and further eliminate events that do not display the correct temporal connections).  For a problem such as tropical cyclone detection, the first stage may use information such as surface pressure and vorticity, and the second stage can then connect these points to form track for the associated storms.  This software has been recently applied to tropical cyclones by \cite{li2013hurricanes}, which has set the stage for further detection and attribution efforts.
+
+\subsubsection{Human-induced climate change} \label{sec:EnsembleData}
+
+As part of the Climate of the 20th Century (C20C) project, Michael Wehner, Da\'ith\'i Stone and others have performed 50 simulations of possible climate scenarios using historical sea-surface temperature (SST) forcings covering the period from 1959 to 2011 [\url{http://portal.nersc.gov/c20c/}].  Each of these simulations represent one possible atmosphere that is consistent with known historical greenhouse gas emissions and ocean temperatures.  A further ensemble of 50 simulations have been computed using historical data which has been adjusted to remove anthropogenic forcing, including greenhouse gas emissions and warming of SSTs, to mimic the state of the pre-industrial atmosphere.  These two ensembles are commonly referred to as ``the world that was'' and ``the world that could have been.''  The goal of the proposed project is to leverage these datasets to better understand the role that humans have played in affecting regional and global climate over the past century.
+
+\subsubsection{Reanalysis products}
+
+Reanalysis products represent climate model hindcasts which are tightly constrained to known observational data.  The importance of reanalysis products has been apparent:  Development of these products has been a major research focus, particularly over the past decade, with more than half a dozen agencies now maintaining reanalysis datasets.  However, these datasets have the potential to differ significantly depending on the choice of model, specific model parameters, the number of observations and the methodology by which data is assimilated into the model.  Although several major reanalysis products are available, this proposal aims to focus on results from NCEP \citep{kalnay1996ncep}, ERA-40 \citep{uppala2005era}, ERA-Interim \citep{simmons2007era}, MERRA \citep{rienecker2011merra} and C20C \citep{compo2011twentieth}.  For studying heat waves over the continental US, high resolution North American Regional Reanalysis (NARR) data will also be used.  The use of multiple datasets is important for identifying and overcoming biases associated with specific atmospheric models that may contaminate the results \citep{jun2008spatial}, and will lead to a set of more robust scientific conclusions.
+
+\subsubsection{CLIVAR and IPCC/CMIP5 datasets} \label{sec:CLIVAR-IPCC-CMIP5}
+
+Climate Variability and Predictability (CLIVAR) experiments are commonly used to isolate changes in the climate system associated with accepted forcing mechanisms.  Specifically, the experiments of interest for this proposal use present-day forcing which has been modified by (a) doubling atmospheric CO2 concentration (2xCO2), (b) increasing global sea-surface temperatures by 2 degrees (SST+2) or (c) a combination of (a) and (b).  CLIVAR runs have been completed using CESM over a 14-17 year integration period at 25km and a 24-27 year integration period at 100km and are now available for analysis.
+
+The fifth Climate Model Intercomparison Project (CMIP5) represents a major international collaboration, having brought together 19 global Earth-system models from the around the world to better understand the effect of changing climate over the next century.  These experiments use a standard suite of four Representative Concentration Pathways (RCPs) to account for predicted changes in greenhouse gas emissions, and are performed at horizontal resolutions ranging from 25km to 200km.  Results from the multi-model ensemble are now available for scientific analysis.  Specifically, this proposal will analyze the results of this ensemble to develop a consensus and understanding of how the community of climate models predict pressure blocking events/heat waves and extratropical cyclones and understand how CESM compares to other models so as to better isolate its model biases.
+
+\subsection{Research Milestones} \label{sec:ResearchMilestones}
+
+The research milestone will be approached in a step-by-step manner as described in the following sections.  A set of relevant scientific questions are also provided that will be addressed by the proposed research.
+
+\subsubsection{Task 1: }
+
+\subsubsection{Task 2: }
+
+\subsubsection{Task 3:}
+
+\subsubsection{Task 4:}
+
+\subsubsection{Task 5:}
+
+\subsection{Online access to climate data and results}
+
+Dissemination of climate data and scientific results is an important issue for increasing public understanding of climate change.  To this end, the PI will work to develop a website (via the domain \url{http://climate.ucdavis.edu}) which allows for easy access to the results of the research component of this proposal, as well as other results that draw from existing climate data.  This webspace would allow for users to query the database of climate data, and would provide frequent and accessible commentary on the latest results to emerge from the climate science community.  The PI's past experience as a professional web developer and experience with HTML and PHP will be advantageous to the development of this project.
+
+\subsection{Timeline} \label{sec:Timeline}
+
+Each of the graduate student researchers involved in this project will work on one of the atmospheric features presented in this proposal: either tropical cyclones events or extratropical cyclones, although it is anticipated that there will be substantial collaboration on the technical level.  Each year of the proposal is expected to be approximately associated with one task as described in section \ref{sec:ResearchMilestones}.  The approximate timeline, including components of the educational plan, is as follows:
+
+\begin{tabularx}{\textwidth}{cX}
+\hline
+\textbf{Year 1} & $\cdot$ Stuff \\
+& $\cdot$ More Stuff \\
+\hline
+\textbf{Year 2} & $\cdot$ Stuff \\
+& $\cdot$ More Stuff \\
+\hline
+\textbf{Year 3} & $\cdot$ Stuff \\
+& $\cdot$ More Stuff \\
+\hline
+\end{tabularx}
+
+We anticipate that multiple major peer-reviewed publications will arise from this work, addressing the studies of detection, attribution and prediction. Further, this work will be presented at major scientific meetings, including the annual meetings for the American Meteorological Society, the European Geophysical Union and the American Geophysical Union.
+
+{\setbox0\vbox{\bibliography{UllrichReed-NSF-Cyclones}}}
+\bibliographystyle{wileyqj}
+
+\end{document}
+

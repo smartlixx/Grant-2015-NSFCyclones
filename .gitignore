@@ -1,0 +1,10 @@
+
+*.aux
+
+*.log
+
+*.out
+
+NSFCyclones-ProjectDescription.pdf
+
+NSFCyclones-ProjectDescription.synctex.gz
