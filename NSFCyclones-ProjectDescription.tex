@@ -146,10 +146,6 @@ Extratropical cyclones are dominant features of the mid-latitude atmosphere asso
 
 The Community Earth-System Model (CESM) \cite{RBNetal2010NCAR} is a state-of-the-art Earth modeling framework developed at NCAR, consisting of atmospheric, oceanic, land and sea ice components.  This framework has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change.  The atmopsheric component, CAM, is further broken into two components: the dynamical core, which solves the 3D primitive equations of motion for the atmosphere, and the physics parameterization suite, which incorporates processes that occur on scales finer than the model grid scale. This project will utilize simulations from two different commonly used dynamics packages. The first package, the finite-volume (FV) dynamical core based on a regular latitude--longitude grid, is built upon a 2D shallow water approach described in \citet{Lin1996,Lin1997} and is mass-conservative in flux-form. The push for high-resolution climate simulations has required that CAM be sufficiently robust to operate on horizontal scales as fine as 10 km globally, although previous generations of the dynamical cores on latitude-longitude grid have been too slow at high resolutions to operate well at these scales.  With the development of the CAM spectral element (SE) dynamical core \citep{dennis2012cam}, utilizes a continuous Galerkin method with polynomials of degree 3 to provide a fourth-order accurate horizontal discretization on a highly scalable cubed-sphere mesh.  Current experiments are only now leading to the availability of simulations on climate time-scales at 25km global resolution \citep{Bacmeister2014, Wehner2014, Wehner2015}.
 
-\subsubsection{Justification for using CESM 28km to model Atlantic basin tropical cyclones}
-
-{\color{red}[Kevin write this]}
-
 \subsubsection{High-throughput event detection with TempestExtremes} \label{sec:TempestExtremes}
 
 TempestExtremes software package, a new suite of flexible detection and characterization algorithms developed by the Co-PI for processing large climate datasets. This package uses an algorithmic framework known as ``MapReduce'' to first detect candidate events at individual times using specified criteria. Stitching is then used to track pointwise and areal detections in time. The result is a catalog of extreme weather events and associated characteristics (here treated as climate indicators) whose generation can be automated and parallelized for multiple datasets.
@@ -200,6 +196,20 @@ RCP8.5, CAM5-SE & 100$\Rightarrow$25 km & 15 years    & 5 ensembles for 2070-209
 \end{center}
 \end{table}
 
+\subsubsection{Justification for using CAM 28km to model Atlantic basin tropical cyclones}
+
+CAM5 has shown an increasing ability to simulate tropical cyclones in the North Atlantic.  Figure \ref{fig:NATCs} shows preliminary CAM5 tropical cyclone counts (e.g., all cyclones that reach tropical storm intensity or 17 m/s) in the North Atlantic using two different model configurations. When compared to observations from the International Best Track Archive for Climate Stewardship (IBTrACS, \citet{Knapp2010}) the CAM5 simulation produce  between 2-3 less storms less per year. Despite this slight bias in storm count, CAM5 does capture the interannual variability in the basin rather well, with correlations of 0.69 and 0.74 for CAM5-FV and CAM5-SE, respectively. The ability of CAM5 to reasonably simulation year-to-year variability suggests that the model is a good candidate to study the lifecycle of storms in the North Atlantic, as well as climate change impacts.
+
+\begin{figure}[p]
+\begin{center}
+%\begin{tabular}{|p{4in}|}
+\includegraphics[width=6in]{NA_interannual.eps}
+%\hline
+%\end{tabular}
+\end{center}
+\caption{Annual counts of simulated high-resolution CAM5 and observed tropical cyclones from 1980 to 2000 in the North Atlantic ocean basin.} \label{fig:NATCs}
+\end{figure}
+
 \subsubsection{Observation and Reanalysis products}
 
 Reanalysis products represent climate model hindcasts which are tightly constrained to known observational data.  The importance of reanalysis products has been apparent:  Development of these products has been a major research focus, particularly over the past decade, with more than half a dozen agencies now maintaining reanalysis datasets.  However, these datasets have the potential to differ significantly depending on the choice of model, specific model parameters, the number of observations and the methodology by which data is assimilated into the model.  Although several major reanalysis products are available, this proposal aims to focus on results from NCEP \citep{kalnay1996ncep}, ERA-40 \citep{uppala2005era}, ERA-Interim \citep{simmons2007era}, MERRA \citep{rienecker2011merra} and C20C \citep{compo2011twentieth}.  For studying heat waves over the continental US, high resolution North American Regional Reanalysis (NARR) data will also be used.  The use of multiple datasets is important for identifying and overcoming biases associated with specific atmospheric models that may contaminate the results \citep{jun2008spatial}, and will lead to a set of more robust scientific conclusions.
@@ -244,7 +254,7 @@ Using the seamless dectection algorithm described in Task 1, this relationship b
 
 \subsubsection{Task 3: Tropical Cyclone Tracks, Intensity and other Characteristics}
 
-Due to extreme computational costs, studies of TCs at high-resolution in climate models are typically limited to one realiztion (i.e. on esemble member). Recently however, ensemble simulation have been run in the CAM5-FV AMIP configuration for the period of 1994 to 2005 in collaboration with Michael Wehner at LBNL. The ensemble simualtions offer a unique oppurtunity to study the natural varibility of the cyclone climatology in the recent climate. In addition, the present-day climatology CAM5-FV CLIVAR simulation offers a different form of variability, as it represents the internal variability of a one year climatology runs 14-17 times. Furthermore, additional simulations using the variable-resolution cabilities of CAM5-SE will be performed to compliment the global high-resultion CAM5-SE AMIP simulations. The advantage of the variable resolution runs is that numerous ensemble runs can be performed at the same cost as the one globally uniform high-resolutiuon simulation.
+Due to extreme computational costs, studies of TCs at high-resolution in climate models are typically limited to one realization (i.e. one ensemble member). Recently however, ensemble simulations have been run in the CAM5-FV AMIP configuration for the period of 1994 to 2005 in collaboration with Michael Wehner at LBNL. The ensemble simulations offer a unique opportunity to study the natural variability of the cyclone climatology in the recent climate. In addition, the present-day climatology CAM5-FV CLIVAR simulation offers a different form of variability, as it represents the unforced variability of a one year climatology runs 14-17 times. Furthermore, additional simulations using the variable-resolution cabilities of CAM5-SE will be performed to compliment the global high-resoultion CAM5-SE AMIP simulations. The advantage of the variable resolution runs is that numerous ensemble runs can be performed at the same cost as the one globally uniform high-resolution simulation.
 
 \emph{How well does CAM5 perform at interannual variability?}
 
