@@ -75,13 +75,15 @@ The key scientific questions that are the focus of this proposal are as follows:
 \item[(Q1)] Is the location of tropical cyclogenesis in the Atlantic basin modified under climate change in high-resolution climate model simulations?  {\color{red}[Bengtsson, Hodges and Roeckner (2006)]}  How does the projected intensification of the African Easterly Jet affect cyclogenesis off the African coast?
 
 \item[(Q2)] How are the lifetime characteristics of tropical cyclones affected under future climate change in high-resolution climate model simulations?
+
+\item[(Q3)] Why does the count of North Atlantic tropical cyclones decrease in future scenarios?
 \end{itemize}
 
 The central hypotheses of this proposal are as follows:
 
 \vspace{-0.4cm}
 \begin{itemize}
-\item[(H1)] Changes in African Easterly Wave activity is a driver for reduced tropical cyclone count in the Atlantic basin.
+\item[(H1)] Changes in African Easterly Wave activity is a driver for reduced tropical cyclone count and increased intensity in the Atlantic basin.
 
 \item[(H2)] The transition point for tropical cyclones to extratropical cyclones will be pushed north in response to increased carbon dioxide and/or increased sea surface temperatures.
 
@@ -118,9 +120,9 @@ Understanding how tropical cyclone (TC) climatology may change in the coming dec
 
 \subsection{Strengths of the team}
 
-PI Kevin Reed brings considerable experience in high-resolution climate modeling.  His past research has focused on understanding the ability of the Community Atmosphere Model (CAM) to simulate tropical cyclones at present-day and next-generation horizontal resolution \citep{Reed2011a,Reed2011c}.  This includes the study of how tropical cyclones and precipitation extremes change with climate change using decadal climate simulations at approximately 25-km horiztonal resoluton \citep{Wehner2014,Wehner2015}. Prof Reed also has developed techniques to utilize reduced complexity testbeds for understanding cloud, circulation and precipitation sensitivities in General Circulation Models (GCMs) \citep{Reed2012a,Reed2014}. These simplified techniques have shown to be useful to rationalize robust behaviors of the Earth system and are vital to continued model development and intercomparison. Through his work, Prof. Reed has developed international collaborations in model development and high-resolution modeling.
-
 The PI and his collaborating team are uniquely positioned to conduct multi-model ensemble intercomparisons of variable-resolution climate model output using a suite of cutting-edge atmospheric models and post-processing tools.
+
+PI Kevin Reed brings considerable experience in high-resolution climate modeling.  His past research has focused on understanding the ability of the Community Atmosphere Model (CAM) to simulate tropical cyclones at present-day and next-generation horizontal resolution \citep{Reed2011a,Reed2011c}.  This includes the study of how tropical cyclones and precipitation extremes change with climate change using decadal climate simulations at approximately 25-km horiztonal resoluton \citep{Wehner2014,Wehner2015}. Prof Reed also has developed techniques to utilize reduced complexity testbeds for understanding cloud, circulation and precipitation sensitivities in General Circulation Models (GCMs) \citep{Reed2012a,Reed2014}. These simplified techniques have shown to be useful to rationalize robust behaviors of the Earth system and are vital to continued model development and intercomparison. Through his work, Prof. Reed has developed international collaborations in model development and high-resolution modeling.
 
 This project will further benefit from Co-PI Ullrich's experience with atmospheric model development  (\cite{ullrich2010high, PHLPAURDN2011SPRINGER, ullrich2012operator, ullrich2012mcore, ullrich2014fluxform, guba2014viscosity, ullrich2014understanding, ullrich2014global}), numerical analysis (\cite{ullrich2011analysis, ullrich2012considerations}) and model evaluation (\cite{DCMIP2012TESTCASES, ullrich2014proposed, kent2013dynamical, ullrich2014baroclinic}).  PI Ullrich has been heavily involved with work on variable-resolution modeling \citep{zarzycki2014aquaplanet} and adaptive mesh refinement  \citep{collins2013nonhydrostatic, mccorquodale2014adaptive}. Many relevant tools have been developed by the Co-PI, including the SQuadGen grid generation tool (described in \cite{guba2014viscosity}), the TempestRemap post-processing toolkit \citep{ullrich2015remapping} and the TempestExtremes toolkit for extreme weather detection and characterization \citep{ullrich2015extremes}. He is heavily involved in national collaborations on climate projects, and is an organizer on a number of sessions and workshops which are related to atmospheric modeling. In addition, he is closely affiliated with ongoing climate research efforts at Lawrence Berkeley National Laboratory (LBNL) and the National Center for Atmospheric Research (NCAR).
 
@@ -203,7 +205,7 @@ CAM5 has shown an increasing ability to simulate tropical cyclones in the North 
 \begin{figure}[p]
 \begin{center}
 %\begin{tabular}{|p{4in}|}
-\includegraphics[width=6in]{NA_interannual.eps}
+\includegraphics[width=5.5in]{NA_interannual.eps}
 %\hline
 %\end{tabular}
 \end{center}
@@ -232,25 +234,27 @@ For the validation of tropical cyclones, observations from the International Bes
 
 \subsubsection{Task 2: African Easterly Waves and Cyclogenesis} 
 
-Hodges (1995) identifies a technique for tracking African Easterly waves.
+This task investigates the effect of climate change on the behavior of cyclogenesis in the Atlantic basin.  Preliminary work has shown a noticeable decrease in the formation of tropical cyclones in the North Atlantic in the CAM5-SE simulations. Figure \ref{fig-rcp}, shows the track density of TCs for present-day and future simulations using the TC detection algorithm and tracker utilized for this analysis is that used and described in \citet{Zhao2009}. The figure indicates a decrease in TCs basin-wide with the largest decrease in the eastern part of the bain off the coast of Africa. The track densities are calculated similar to \citet{Done2013} and is defined as the number of TC genesis points or tracks within a 5 degree radius of a given point per year. This pattern suggests that there is some connection between the future distribution and African Easterly Waves.  Specifically, we will address the following question:
 
-{\color{red} More citations from Emily?}
+\textit{Can the observed decrease in Atlantic basin storm counts be attributed to a decrease in tropical cyclone initiating African Easterly Waves?}
 
-Thorncroft and Hodges (2001) argue that AEWs on the southern side of the AEJ play a much greater role in tropical cyclogenesis than AEWs on the poleward side.  ``This result suggests that Atlantic tropical cyclone activity may be influenced by the number of AEWs leaving the West African coast, which have significant low-level amplitudes, and not simply by the total number of AEWs.''
+Using the seamless dectection algorithm described in Task 1, the relationship between AEWs and TCs will be explored both in the idealized CLIVAR experiments and CAM5-SE simulations using the ensemble variable resolution simulations. In particular, the location and intensity of AEWs will be investigated, as well as the efficiency of the tropical waves to develop into TCs.  Furthermore, a comprehensive investigation of other environmental factors, including shear, will be pursued. 
+  
+Changes to the African Easterly Jet As pointed out by \cite{skinner2013contribution}, increased regional temperature gradients and intensification in the strength of convergence and uplift along the Intertropical Front of Africa may lead to an increase in the strength of AEWs.  However, it remains unclear how the frequency of AEWs, and particularly tropical cyclone initiating AEWs will be affected under future climate.
 
-Following Thorncroft and Hodges (2001), AEWs will be investigate over the latitudinal range $[5^\circ N, 15^\circ N]$ and $[5^\circ W, 25^\circ W]$.
+To address this question, we propose to implement AEW tracking capability in TempestExtremes.  Detection and tracking of AEWs has been historically performed using either meridional velocity \cite{Burpee1974, Reed1977} or vorticity \cite{hodges1995feature, thorncroft2001african} at the 850 hPa or 600 hPa level.  We will implement both tracking techniques in TempestExtremes, and will further investigate the use of sea-level pressure minima as an alternative tracking strategy.  The tracking algorithm will be limited to the region $[5^\circ N, 25^\circ N]$ and $[5^\circ W, 35^\circ W]$ in order to prevent spurious detection of non-AEW activity.  In conjunction with the TC detection scheme described in section \ref{sec:TempestExtremes}, this approach will allow us to identify TC precursors in the form of AEWs and determine what role the strength of AEWs plays in triggering cyclogenesis.  As pointed out by \cite{thorncroft2001african}, AEWs from the southern side of the AEJ play a much greater role in cyclogenesis than AEWs on the poleward side.  Consequently, we will also track the position of the AEJ and determine if our model simulations show any trend in the mean latitudinal position of the jet that may affect the trajectory of AEWs.
 
-Skinner and Diffenbaugh (2013): ``We find that increases in regional temperature gradients and the strength of convergence and uplift along the Intertropical Front of Africa lead to increases in the strength of AEWs.''  
+%\cite{hodges1995feature} identifies a technique for tracking AEWs in terms of the vorticity.
 
-Skinner and Diffenbaugh (2012) AGU abstract: ``Given favorable conditions for cyclogenesis in the eastern Atlantic, AEWs, particularly those associated with convection over West Africa, develop into tropical cyclones.''
+%\cite{thorncroft2001african} argue that AEWs on the southern side of the AEJ play a much greater role in tropical cyclogenesis than AEWs on the poleward side.  ``This result suggests that Atlantic tropical cyclone activity may be influenced by the number of AEWs leaving the West African coast, which have significant low-level amplitudes, and not simply by the total number of AEWs.''
+
+%Following \cite{thorncroft2001african}, AEWs will be investigate over the latitudinal range $[5^\circ N, 15^\circ N]$ and $[5^\circ W, 25^\circ W]$.
+
+%: ``We find that increases in regional temperature gradients and the strength of convergence and uplift along the Intertropical Front of Africa lead to increases in the strength of AEWs.''  
+
+%\cite{skinner2012african}: ``Given favorable conditions for cyclogenesis in the eastern Atlantic, AEWs, particularly those associated with convection over West Africa, develop into tropical cyclones.''
 
 %Indeed, nearly all models simulate an increase in the occurrence of intense and extremely intense AEWs along the Sahel?Sahara border (Fig. 5). This includes median changes of +2.0 events per season (and +39\%) for intense AEWs, and +0.8 events per season (and +72\%) for extremely intense AEWs.
-
-\emph{Why does the count of North Atlantic tropical cyclones decrease in future scenarios?}
-
-Preliminary work has shown a noticeable decrease in the formation of tropical cyclones in the North Atlantic in the CAM5-SE simulations. Figure \ref{fig-rcp}, shows the track density of TCs for present-day and future simulations using the TC detection algorithm and tracker utilized for this analysis is that used and described in \citet{Zhao2009}. The figure indicates a decrease in TCs basin-wide with the largest decrease in the eastern part of the bain off the coast of Africa. The track densities are calculated similar to \citet{Done2013} and is defined as the number of TC genesis points or tracks within a 5 degree radius of a given point per year. This pattern suggests that there is some connection between the future distribution and African easterly Waves.
-
-Using the seamless dectection algorithm described in Task 1, this relationship between AEWs and TCs will be explored both in the idealized CLIVAR experiments and CAM5-SE simulations using the ensemble variable resolution simulations. In particular, the location and intensity of AEWs will be investigated, as well as the efficiency of the tropical waves to develop into TCs. Furthermore, a comprehensive investigation of other environmental factors, including shear, will be studied.
 
 \subsubsection{Task 3: Tropical Cyclone Tracks, Intensity and other Characteristics}
 
